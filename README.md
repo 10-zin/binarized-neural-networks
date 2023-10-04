@@ -1,5 +1,6 @@
-# binarized-neural-networks
-How far can you go on datsets like MNIST with neural nets of 1s and 0s
+# Binarized Neural Networks
+### CS - 7641: Machine Learning Project Proposal 
+>How far can you go on datsets like MNIST with neural nets of 1s and 0s
 
 
 # Introduction 
@@ -46,7 +47,7 @@ We will be using [MNIST](https://knowyourdata-tfds.withgoogle.com/#tab=STATS&dat
  ![MNIST](images/mnist.webp)
 
 
- # References 
+# References 
 
 1. Courbariaux, Matthieu, Yoshua Bengio, and Jean-Pierre David. "Binaryconnect: Training deep neural networks with binary weights during propagations." Advances in neural information processing systems 28 (2015). 
 

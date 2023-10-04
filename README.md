@@ -14,6 +14,16 @@ Members names orderd in Lexicographically ascending order.
 | Sri Kamal                        | schillarage3   |
 | Tenzin Bhotia                    | tbhotia3       |
 
+# Table of Contents
+1. [Introduction](#introduction)
+2. [Problem Definition ](#problem-definition)
+3. [Methods](#methods)
+4. [Potential Results and Discussion ](#potential-results-and-discussion)
+5. [Dataset](#dataset)
+6. [Timeline](#timeline)
+7. [Member Contributions](#member-contributions)
+8. [References](#references)
+
 # Introduction 
 
 As Neural Networks have grown increasingly capable, their memory and compute footprint has grown at a commensurate pace. To reduce the time taken to train and to reduce the memory and storage requirements, we propose the use of binarized neural networks. The basic idea is that instead of using a 32-bit floating-point value to represent a single weight, we will use one bit to represent it. We also aim to binarize the input so that we can replace expensive matrix multiplication with logical AND operation. Since we are exploring a novel problem, we wanted to use a standard dataset like MNIST so that we can compare our work with popular benchmarks. 
@@ -36,7 +46,7 @@ The main result that we are expecting at the end is to have a small model which 
 
 Find the [Gantt Chart here](https://gtvault-my.sharepoint.com/:x:/g/personal/bsomu3_gatech_edu/EelUHYYmrTRGlW9DHgme1MUBtKZvp8KfHR6h5FXsjXqcjg?e=aNcJNW). 
 
-# Contributions
+# Member Contributions
 
 | TASK TITLE                       | TASK OWNER |
 |----------------------------------|------------|

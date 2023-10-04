@@ -1,6 +1,6 @@
 # Binarized Neural Networks
 ### CS - 7641: Machine Learning Project Proposal 
->How far can you go on datsets like MNIST with neural nets of 1s and 0s
+<!-- >How far can you go on datsets like MNIST with neural nets of 1s and 0s -->
 
 
 # Introduction 

@@ -18,8 +18,8 @@ Members names orderd in Lexicographically ascending order.
 1. [Introduction](#introduction)
 2. [Problem Definition ](#problem-definition)
 3. [Methods](#methods)
-4. [Potential Results and Discussion ](#potential-results-and-discussion)
-5. [Dataset](#dataset)
+4. [Dataset](#dataset)
+5. [Potential Results and Discussion ](#potential-results-and-discussion)
 6. [Timeline](#timeline)
 7. [Member Contributions](#member-contributions)
 8. [References](#references)
@@ -35,6 +35,12 @@ A standard operation when training a neural network of any kind is to multiply t
 # Methods 
 
 We will first implement a simple K-means classifier with K set to 10 to get an idea of the data, and log examples where k-means struggles to classify a given example. We will also implement feed forward neural networks, convolutional neural networks, Logistic Regression and Transformers and implement binarized versions (using techniques like quantization and binary connect) in each of the above models. We will then compare model accuracy, size, time taken to train, time to classify an input example and present this information in our final writeup. 
+
+# Dataset 
+
+We will be using [MNIST](https://knowyourdata-tfds.withgoogle.com/#tab=STATS&dataset=mnist) dataset for this project. MNIST is a dataset of 60,000 handwritten digits that is commonly used for training various image classification systems. Data visualized below. 
+
+ ![MNIST](images/mnist.webp)
 
 # Potential Results and Discussion 
 
@@ -58,14 +64,6 @@ Find the [Gantt Chart here](https://gtvault-my.sharepoint.com/:x:/g/personal/bso
 | Video Recording                  | Oscar      |
 | Build the GitHub Page            | Tenzin     |
 | Literature Review (References)   | Tenzin     |
-
- 
-
-# Dataset 
-
-We will be using [MNIST](https://knowyourdata-tfds.withgoogle.com/#tab=STATS&dataset=mnist) dataset for this project. MNIST is a dataset of 60,000 handwritten digits that is commonly used for training various image classification systems. Data visualized below. 
-
- ![MNIST](images/mnist.webp)
 
 
 # References 

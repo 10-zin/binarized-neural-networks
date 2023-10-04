@@ -1,5 +1,7 @@
-# Welcome to ML-7641 (Fall'23) Project Proposal - Group 49
+# ML-7641 Binarized Neural Networks
 <!-- >How far can you go on datsets like MNIST with neural nets of 1s and 0s -->
+
+ML-7641 (Fall'23) Project Proposal - Group 49
 
 # Team Members
 Members names orderd in Lexicographically ascending order.

@@ -1,7 +1,16 @@
-# Binarized Neural Networks
-### CS - 7641: Machine Learning Project Proposal 
+# Welcome to ML-7641 (Fall'23) Project Proposal - Group 49
 <!-- >How far can you go on datsets like MNIST with neural nets of 1s and 0s -->
 
+# Team Members
+Members names orderd in Lexicographically ascending order.
+
+| Member Name                      | Student-Id (@gatech.edu) |
+|----------------------------------|----------------|
+| Gaurang Kamat                    | gkamat8        |
+| Oscar Laird                      | olaird3        |
+| Somu Bhargava                    | bsomu3         |
+| Sri Kamal                        | schillarage3   |
+| Tenzin Bhotia                    | tbhotia3       |
 
 # Introduction 
 

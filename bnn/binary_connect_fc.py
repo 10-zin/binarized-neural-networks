@@ -11,16 +11,12 @@ class BCLinear(nn.Linear):
     def __init__(self, *kargs, **kwargs):
         super().__init__(*kargs, **kwargs)
         self.bc_sampler = BCSampler.apply
-        self.weight.register_hook(self.clamp_weights)  # hook called after each update to the weights
-        # initialize weights to zero
-        # I didn't notice much difference between uniform and zero initialization
         self.weight.data = torch.zeros_like(self.weight.data) #.uniform_(-1, 1)
-        # alpha is the scaling factor for the weights (same for all weights)
-        self.alpha = 1/torch.sqrt(torch.tensor(self.in_features, dtype=torch.float))
+        self.weight.register_hook(self.clamp_weights)  # hook called after each update to the weights
 
     def clamp_weights(self, grad):
         with torch.no_grad():
             self.weight.clamp_(-1, 1)
 
     def forward(self, input):
-        return F.linear(input, self.alpha * self.bc_sampler(self.weight), self.bias)
+        return F.linear(input, self.bc_sampler(self.weight) / self.in_features**0.5, self.bias)

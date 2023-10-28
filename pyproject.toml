@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "bnn"
+version = "0.1.0"
+description = ""
+authors = ["Oscar Laird <olaird25@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = "2.1.0+cu121"
+notebook = "^7.0.5"
+datasets = "^2.14.5"
+torchvision = "^0.16.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu121/"
+priority = "supplemental"
+

@@ -1,0 +1,5 @@
+# poetry
+poetry.lock
+
+# data from torch datasets
+data/

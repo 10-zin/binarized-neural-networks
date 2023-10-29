@@ -7,13 +7,12 @@ import torch.nn.functional as F
 
 from bnn.binary_connect_fc import BCLinear
 
-
 # Hyperparameters
 input_size = 784  # 28x28
 output_size = 10  # number of classes (digits) to predict
-num_epochs = 3  # this is very low for demonstration purposes
+num_epochs = 3  # This is very low for demonstration purposes!
 batch_size = 100
-learning_rate = 0.02  # This is very high for demonstration purposes
+learning_rate = 0.02  # This is very high for demonstration purposes!
 
 class Net(nn.Module):
     def __init__(self):
@@ -53,10 +52,9 @@ for epoch in range(num_epochs):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        # log
         if (batch_idx+1) % 100 == 0:
             print('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}'.format(epoch+1, num_epochs, batch_idx+1, len(train_loader), loss.item()))
-    model.eval()  # eval mode (batchnorm uses moving mean/variance instead of mini-batch mean/variance)
+    # evaluate on the test set
     with torch.no_grad():
         correct = 0
         total = 0

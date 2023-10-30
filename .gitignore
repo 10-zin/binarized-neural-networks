@@ -1,0 +1,9 @@
+# poetry
+poetry.lock
+
+# data from torch datasets
+data/
+
+# pyc, pycache
+*.pyc
+**/__pycache__/

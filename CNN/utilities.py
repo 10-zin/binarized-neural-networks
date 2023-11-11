@@ -10,7 +10,9 @@ SIMPLE_FOLDER = "Test_data/simple"
 
 def rgb2gray(rgb):
 	# green channel works for most cases as a grayscale proxy
-	return rgb[:, :, 1]
+	green = rgb[:, :, 1]
+	green = 255 - green # invert colors to match training
+	return green
 
 
 def resize_to_mnist_image_size(folder_name, source_filename):

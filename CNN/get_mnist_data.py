@@ -8,11 +8,13 @@ def get_data():
     url = 'http://yann.lecun.com/exdb/mnist/'
     files = ['train-images-idx3-ubyte.gz', 'train-labels-idx1-ubyte.gz',
              't10k-images-idx3-ubyte.gz', 't10k-labels-idx1-ubyte.gz']
-    data_dir = './images/'
+    data_dir = './mnist_data/'
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
     for file in files:
         urllib.request.urlretrieve(url + file, data_dir + file)
+
+# get_data()
 
 
 def convert(img_file, label_file, txt_file, n_images):

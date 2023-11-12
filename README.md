@@ -2,7 +2,7 @@
 <!-- >How far can you go on datsets like MNIST with neural nets of 1s and 0s -->
 
 ### Fall'23: Project Proposal - Group 49
-All Code open-sourced and available at https://github.com/10-zin/binarized-neural-networks
+All Code open-sourced and available at our [Github Repository](https://github.com/10-zin/binarized-neural-networks)
 
 # Team Members
 Members names orderd in Lexicographically ascending order.

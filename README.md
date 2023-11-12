@@ -37,7 +37,7 @@ A standard operation when training a neural network of any kind is to multiply t
 We will be using [MNIST](https://knowyourdata-tfds.withgoogle.com/#tab=STATS&dataset=mnist) dataset for this project. MNIST is a dataset of 60,000 handwritten digits that is commonly used for training various image classification systems. Data visualized below. 
 
  ![MNIST](images/mnist.webp)
- 
+
 # Methods 
 
 We will first implement a simple K-means classifier with K set to 10 to get an idea of the data, and log examples where k-means struggles to classify a given example. We will also implement feed forward neural networks, convolutional neural networks, Logistic Regression and Transformers and implement binarized versions (using techniques like quantization and binary connect) in each of the above models. We will then compare model accuracy, size, time taken to train, time to classify an input example and present this information in our final writeup. 
@@ -45,7 +45,7 @@ We will first implement a simple K-means classifier with K set to 10 to get an i
 ## Exploratory Data Analysis of MNIST
 
 We start with some preliminary visualizations and analysis of the MNIST Data. 
-Majorly we would like to understand if a mere k-means classification can help us form good clusters. And if not, then what are the digits that often look like another digit. 
+Majorly we would like to understand if a mere clustering classification can help us form good clusters. And if not, then what are the digits that often look like another digit. 
 
 First, we sample 10 images for each label, and visualize them as shown below.
 ![Sampled Images](images/mnist.png)
@@ -153,7 +153,7 @@ Following, demonstrates our evluatation curves.
 
 Firstly, we observe that to our surpirse our custom implementation of NNs (MLP) beat CNNs. We go through our code multiple times, but find no reasonable bug. However, we do also observe that the CNN graph accuracy is tending upwards catching to NNs graph line. We hypothesize, upon further scaling CNNs can reach the NNs accuracy. Due to computation constraints we pause our experiments here for now, and leave that analysis for the final project update.
 
-We wanted to validate our hypothesis, that binarized neural networks can also learn considerably well, and our experiments correctly indicate that. We observe that BNNs reach an accuracy of about 93% which is `within 5%` error rate than its full-precision non binarized variant. On the other hand binarized Neural Networks take only `1.7 MB of RAM` during training to load the model, while full-precision NNs and CNNs take atleast 13 MB of RAM. This `proof-of-concept` clearly showcases that `binarized NNs are particularly well suited at a great accurcay-efficiency trade-off for edge-devices where memory constraints are extremely strict.` 
+We wanted to validate our hypothesis, that binarized neural networks can also learn considerably well, and our experiments correctly indicate that. We observe that BNNs reach an accuracy of about 94% which is `within 4%` error rate than its full-precision non binarized variant. On the other hand binarized Neural Networks take only `1.7 MB of RAM` during training to load the model, while full-precision NNs and CNNs take atleast 13 MB of RAM. This `proof-of-concept` clearly showcases that `binarized NNs are particularly well suited at a great accurcay-efficiency trade-off for edge-devices where memory constraints are extremely strict.` 
 
 
 ### Confusion Matrices
@@ -176,7 +176,10 @@ Below we also plot the confusion matrices obtained for each model.
 
 # Potential Results and Discussion 
 
-The main result that we are expecting at the end is to have a small model which takes less memory than the traditional model and can be used in devices which have a memory constraint especially in Robotics etc. Though there may not be significant reduction in resource consumption during training, the models that we end up in each of the proposed categories (Feed Forward neural networks, convolutional neural networks, Logistic Regression and Transformers) are expected to be smaller than their respective counter parts. 
+We have already obtained promising results. Notably we are able to train a binarized neural network that achieves an accuracy of 94%. At a trade-off of about only 4% in accuracy, we create a model that takes only 1.7MB in comparison to 13MB for the full-precision model. 
+We believe this trade-off is perfect for switching to binarized variants in case of extremely constraint restricted use-cases like that of edge-devices. 
+
+In the upcoming final report we will also implement a binarized version of CNNs. Our main aim throughout the remaining weeks, will be to reduce the trade-off as much as possible, and do deeper analysis and comparison of the all the model variants, both in terms of accuracy and resources used.
 
 # Timeline 
 

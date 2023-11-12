@@ -36,6 +36,14 @@ A standard operation when training a neural network of any kind is to multiply t
 
 We will first implement a simple K-means classifier with K set to 10 to get an idea of the data, and log examples where k-means struggles to classify a given example. We will also implement feed forward neural networks, convolutional neural networks, Logistic Regression and Transformers and implement binarized versions (using techniques like quantization and binary connect) in each of the above models. We will then compare model accuracy, size, time taken to train, time to classify an input example and present this information in our final writeup. 
 
+Exploratory Data Analysis of MNIST
+
+We start with some preliminary visualizations and analysis of the MNIST Data. 
+Majorly we would like to understand if a mere k-means classification can help us form good clusters, thereby easily leading to digit classification.
+
+First, we sample a 10 images for each label, and visualize them as shown below.
+[Sampled Images](binarized-neural-networks/images/mnist.png)
+
 # Dataset 
 
 We will be using [MNIST](https://knowyourdata-tfds.withgoogle.com/#tab=STATS&dataset=mnist) dataset for this project. MNIST is a dataset of 60,000 handwritten digits that is commonly used for training various image classification systems. Data visualized below. 

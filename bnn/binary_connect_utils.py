@@ -24,6 +24,7 @@ class BCSampler(torch.autograd.Function):
         # ctx is a context object that can be used to stash information, but we don't need it
         # return -1 or +1, sampling from a Bernoulli distribution
         # with p = hard_sigmoid(input)
+        # return torch.where(input > 0, 1., -1.)  # doesn't speed things up
         return torch.where(torch.bernoulli(hard_sigmoid(input)) == 1, 1., -1.)
 
     def backward(ctx, grad_output):

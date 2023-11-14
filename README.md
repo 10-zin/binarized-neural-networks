@@ -97,10 +97,14 @@ Our main aim is to compare the difference between full precision and binarized v
    - The MNIST dataset is loaded, which contains 60,000 training images and 10,000 test images of handwritten digits, each of size 28x28 pixels. 
 
    - The labels (digits 0-9) are converted to one-hot encoded vectors.
+        - Why? We use cross-entropy loss. Thus, all labels that are incorrect must be 0 probability. This way even a slight probability for an incorrect label prediction gets penalized by its difference from a 0 porbability. On the other hand, it enforces the prediction for correct digit to be closer to 1, which is what we want.
 
    - The image data is normalized by dividing by 255, so pixel values are in the range [0, 1]. 
+        - Why? Normalizing the pixel values to a smaller range (e.g., 0 to 1) makes the network's training more efficient and stable. 
+        This centers our datapoints to a mean of 0.5 with a std. deviation of 0.5, forming easier manifolds for the model to find global minima. This also avoids gradient explosion, as the numbers are b/w 0-1 instead of larger like 255.
 
    - The images are reshaped from 28x28 matrices to flattened 784-element vectors. 
+        - Why? This is done to transform a 2D matrix formatted image, to a 1D vector input that a linear layer of a neural network expects.
 
 2. **Model Architecture:** 
 
@@ -199,6 +203,7 @@ Find the [Gantt Chart here](https://gtvault-my.sharepoint.com/:x:/g/personal/bso
 | Timeline & Distribution          | Bhargava   |
 | Video Recording                  | Oscar      |
 | Build the GitHub Page            | Tenzin     |
+| Collate all contents             | Tenzin     |
 | Literature Review (References)   | Tenzin     |
 
 

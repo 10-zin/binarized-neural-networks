@@ -141,6 +141,12 @@ Our main aim is to compare the difference between full precision and binarized v
         - The convolutional layers are followed by a flattening layer (`Flatten`) and dense layers (`Dense`), with the last layer using softmax activation for classification. 
 
         - The model uses the SGD optimizer with a learning rate of 0.001 and momentum of 0.9. 
+    - Binarized CNNs.
+        - In binarized CNNs, weights and activations are constrained to binary values, typically -1 and +1. This is achieved using a binarization function, such as the hard sigmoid, which maps real-valued weights to either -1 or +1. 
+        - During the forward pass, binary weights are sampled using a function (e.g., BCSampler). The convolution (F.conv2d) or linear transformation (F.linear) is then performed using these binary weights.
+        - In the linear layer (BCLinear), the output is normalized by dividing by the square root of the number of input features (self.in_features\**0.5). Similarly, in the convolutional layer (BCConv2d), the output is divided by the square root of the product of kernel area and the number of input channels ((kernel_area * self.in_channels)**0.5). This normalization is critical for managing the scale of the outputs, considering the binary nature of the weights.
+
+
     - **Training:** 
 
         - All the models are trained for equal number of epochs i.e. 10 epochs
@@ -154,11 +160,36 @@ We log the training loss curves during our training process.
 Post training all our models, we evaluate them on 10k test images of MNIST test set.
 Following, demonstrates our evluatation curves.
 
-![acc-loss](images/accuracy_loss_chart.png)
+![acc-loss](images/nn-bnn.png)
 
-Firstly, we observe that to our surpirse our custom implementation of NNs (MLP) beat CNNs. We go through our code multiple times, but find no reasonable bug. However, we do also observe that the CNN graph accuracy is tending upwards catching to NNs graph line. We hypothesize, upon further scaling CNNs can reach the NNs accuracy. Due to computation constraints we pause our experiments here for now, and leave that analysis for the final project update.
+We wanted to validate our hypothesis, that binarized neural networks can also learn considerably well, and our experiments correctly indicate that. We observe that BNNs reach an accuracy of about 96% which is `within 3%` error rate than its full-precision non binarized variant. On the other hand binarized Neural Networks take only `1.7 MB of RAM` during training to load the model, while full-precision NNs take atleast 13 MB of RAM. This `proof-of-concept` clearly showcases that `binarized NNs are particularly well suited at a great accurcay-efficiency trade-off for edge-devices where memory constraints are extremely strict.`
 
-We wanted to validate our hypothesis, that binarized neural networks can also learn considerably well, and our experiments correctly indicate that. We observe that BNNs reach an accuracy of about 94% which is `within 4%` error rate than its full-precision non binarized variant. On the other hand binarized Neural Networks take only `1.7 MB of RAM` during training to load the model, while full-precision NNs and CNNs take atleast 13 MB of RAM. This `proof-of-concept` clearly showcases that `binarized NNs are particularly well suited at a great accurcay-efficiency trade-off for edge-devices where memory constraints are extremely strict.` 
+
+### Full Throttle Binary vs Full-Precision CNN Comparisons
+We reserve our compute and time to do rigorous and longer training of the full-precision and binarized CNN variants.
+Technically we train our models for 40 epochs, this allows us to observe the potential of binarized variants at a larger scale. Technically we take the following hyperparameters.
+1. input-size of 784 (28*28)
+2. output_size of 10
+3. num_epochs of 40
+4. batch_size of 8.
+5. learning_rate of 0.002
+6. decay factor of 0.9
+
+Both the models have 77,500 parameters. However here are their respective disk usage:
+1. Full precision CNN -> 310KB
+2. Binarized CNN -> 9.6 KB only ! 
+
+
+![nn-results](images/cnn-bnn-acc-comp.png)
+
+
+![nn-results](images/full-half-cnn-loss.png)
+
+
+We see that the full precision CNN learns to classify at a very high accuracy within 2 epochs. And already reaches 99% of accuracy. On the other hand the binarizd variant lags behind by about 4% absolute difference. However, the story is as we train for more epochs Binary CNNs keep on improving at a linear rate. Over 40 epochs we see that Binarized variants are able to touch the Golden band of 99% accuracy. We observe the same trend for our loss graphs. Even on an asbolute the single bit variant just suffers from 0.01 additional absolute error. These results are really exciting considering the fact they are 32 times smaller than the full precision cnn.
+
+### Moral of the Story
+> Binarized Neural Nets are like interns. They start slow, but if you keep them working they catch upto the performance of your full-time employees and cost you no equity and less salary. 
 
 
 ### Confusion Matrices
@@ -173,18 +204,17 @@ Below we also plot the confusion matrices obtained for each model.
 ### Convolutional Neural Networks
 ![nn-results](images/cnn-results.png)
 
+### Binarized Convolutional Neural Networks
+![nn-results](images/binarized-cnn-confusion.png)
 
 
 
+# Results and Discussion 
 
-
-
-# Potential Results and Discussion 
-
-We have already obtained promising results. Notably we are able to train a binarized neural network that achieves an accuracy of 94%. At a trade-off of about only 4% in accuracy, we create a model that takes only 1.7MB in comparison to 13MB for the full-precision model. 
+We have obtained promising results. Notably we are able to train a binarized neural network that achieves an accuracy of 94%. At a trade-off of about only 4% in accuracy, we create a model that takes only 1.7MB in comparison to 13MB for the full-precision model. 
 We believe this trade-off is perfect for switching to binarized variants in case of extremely constraint restricted use-cases like that of edge-devices. 
 
-In the upcoming final report we will also implement a binarized version of CNNs. Our main aim throughout the remaining weeks, will be to reduce the trade-off as much as possible, and do deeper analysis and comparison of the all the model variants, both in terms of accuracy and resources used.
+We also implemented and compared full-precision CNNs with its binarized variants. We see the binarized CNN variant is able to reach 99% accuracy while being 32 times lighter. In absolute terms our binarized CNN version takes only 9.6 KB. Making it suitable for edge device usecases with almost no accuracy trade-off.
 
 # Timeline 
 

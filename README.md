@@ -218,8 +218,8 @@ We believe this trade-off is perfect for switching to binarized variants in case
 We also implemented and compared full-precision CNNs with its binarized variants. We see the binarized CNN variant is able to reach 99% accuracy while being 32 times lighter. In absolute terms our binarized CNN version takes only 9.6 KB. Making it suitable for edge device usecases with almost no accuracy trade-off.
 
 # Next Steps
-In the future we would like to continue binarizing even more complicated models, like Diffusion and Transformer Models.
-We would also like to find novel ways of binarizing these variants.
+In the future we would like to continue binarizing even more complicated models, like Diffusion and Transformer Models. We also plan on benchmarking our models on larger datasets like ImageNet in the future works.
+Finally, we would also like to find novel ways of binarizing these variants.
 
 # Timeline 
 

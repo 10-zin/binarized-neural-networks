@@ -147,14 +147,13 @@ Our main aim is to compare the difference between full precision and binarized v
         - In the linear layer (BCLinear), the output is normalized by dividing by the square root of the number of input features (self.in_features\**0.5). Similarly, in the convolutional layer (BCConv2d), the output is divided by the square root of the product of kernel area and the number of input channels ((kernel_area * self.in_channels)**0.5). This normalization is critical for managing the scale of the outputs, considering the binary nature of the weights.
 
 
-    - **Training:** 
-
-        - All the models are trained for equal number of epochs i.e. 10 epochs
-        - We take a common batch size of 512. 
-        - Learning Rate of 0.001 and a momentum of 0.9
-
 ## Results
 ### Accuracy Loss Charts
+
+The Neural Network models below are
+        - trained for equal number of epochs i.e. 10 epochs
+        - We take a common batch size of 512. 
+        - Learning Rate of 0.001 and a momentum of 0.9
 
 We log the training loss curves during our training process.
 Post training all our models, we evaluate them on 10k test images of MNIST test set.

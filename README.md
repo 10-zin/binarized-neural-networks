@@ -207,8 +207,6 @@ Below we also plot the confusion matrices obtained for each model.
 ### Binarized Convolutional Neural Networks
 ![nn-results](images/binarized-cnn-confusion.png)
 
-
-
 # Results and Discussion 
 
 We have obtained promising results. Notably we are able to train a binarized neural network that achieves an accuracy of 94%. At a trade-off of about only 4% in accuracy, we create a model that takes only 1.7MB in comparison to 13MB for the full-precision model. 

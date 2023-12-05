@@ -185,7 +185,7 @@ Both the models have 77,500 parameters. However here are their respective disk u
 ![nn-results](images/full-half-cnn-loss.png)
 
 
-We see that the full precision CNN learns to classify at a very high accuracy within 2 epochs. And already reaches 99% of accuracy. On the other hand the binarizd variant lags behind by about 4% absolute difference. However, the story is as we train for more epochs Binary CNNs keep on improving at a linear rate. Over 40 epochs we see that Binarized variants are able to touch the Golden band of 99% accuracy. We observe the same trend for our loss graphs. Even on an asbolute the single bit variant just suffers from 0.01 additional absolute error. These results are really exciting considering the fact they are 32 times smaller than the full precision cnn.
+We see that the full precision CNN learns to classify at a very high accuracy within 2 epochs. And already reaches 99% of accuracy. On the other hand the binarizd variant lags behind by about 4% absolute difference. However, the story is as we train for more epochs Binary CNNs keep on improving at a linear rate. Over 40 epochs we see that Binarized variants are able to touch the Golden band of 99% accuracy. We observe the same trend for our loss graphs. Even on an asbolute the single bit variant just suffers from 0.01 additional absolute error. These results are really exciting considering the fact they are 32 times smaller than the full precision cnn. 
 
 ### Moral of the Story
 > Binarized Neural Nets are like interns. They start slow, but if you keep them working they catch upto the performance of your full-time employees and cost you no equity and less salary. 
@@ -212,6 +212,10 @@ We have obtained promising results. Notably we are able to train a binarized neu
 We believe this trade-off is perfect for switching to binarized variants in case of extremely constraint restricted use-cases like that of edge-devices. 
 
 We also implemented and compared full-precision CNNs with its binarized variants. We see the binarized CNN variant is able to reach 99% accuracy while being 32 times lighter. In absolute terms our binarized CNN version takes only 9.6 KB. Making it suitable for edge device usecases with almost no accuracy trade-off.
+
+# Next Steps
+In the future we would like to continue binarizing even more complicated models, like Diffusion and Transformer Models.
+We would also like to find novel ways of binarizing these variants.
 
 # Timeline 
 

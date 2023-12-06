@@ -227,19 +227,27 @@ Finally, we would also like to find novel ways of binarizing these variants.
 
 Find the [Gantt Chart here](https://gtvault-my.sharepoint.com/:x:/g/personal/bsomu3_gatech_edu/EelUHYYmrTRGlW9DHgme1MUBtKZvp8KfHR6h5FXsjXqcjg?e=aNcJNW). 
 
-<!-- # Member Contributions
 
+# Member Contributions
+> **All members contributed equally !**
+ 
 | TASK TITLE                       | TASK OWNER |
 |----------------------------------|------------|
 | Introduction & Background        | Sri Kamal  |
-| Problem Definition               | Sri Kamal  |
-| Methods                          | Sri Kamal  |
-| Potential Results & Discussion   | Bhargava   |
+| Problem Definition               | Sri Kamal / Gaurang  |
+| Unsupervised EDA (t-SNE) | Tenzin / Gaurang|
+| Neural Net implementation | Bhargava |
+| CNN implementation | Sri Kamal |
+| Binarized Neural Net implementation | Oscar |
+| Binarized CNN implementation | Oscar |
+| Methods Description                        | Oscar      |
+| Experiments Results   |Bhargava / Tenzin  |
+| Results Interpretation and Discussion | Tenzin |
+| Literature Review (References)   | Sri Kamal / Tenzin  |
 | Timeline & Distribution          | Bhargava   |
-| Video Recording                  | Oscar      |
+| Video Recording                  | Sri Kamal / Bhargava    |
 | Build the GitHub Page            | Tenzin     |
-| Collate all contents             | Tenzin     |
-| Literature Review (References)   | Tenzin     | -->
+| Collate contents in final report            | Tenzin     |
 
 
 # References 

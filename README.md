@@ -227,7 +227,7 @@ Finally, we would also like to find novel ways of binarizing these variants.
 
 Find the [Gantt Chart here](https://gtvault-my.sharepoint.com/:x:/g/personal/bsomu3_gatech_edu/EelUHYYmrTRGlW9DHgme1MUBtKZvp8KfHR6h5FXsjXqcjg?e=aNcJNW). 
 
-# Member Contributions
+<!-- # Member Contributions
 
 | TASK TITLE                       | TASK OWNER |
 |----------------------------------|------------|
@@ -239,7 +239,7 @@ Find the [Gantt Chart here](https://gtvault-my.sharepoint.com/:x:/g/personal/bso
 | Video Recording                  | Oscar      |
 | Build the GitHub Page            | Tenzin     |
 | Collate all contents             | Tenzin     |
-| Literature Review (References)   | Tenzin     |
+| Literature Review (References)   | Tenzin     | -->
 
 
 # References 
